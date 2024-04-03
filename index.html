@@ -14,7 +14,11 @@
 <input v-model="userTask" placeholder="scrivi la tua task" type="text">
 <button @click="addTask" >Aggiungi</button>
 <ul>
-    <li v-for="task, index in tasks">
+    <li 
+    v-for="task, index in tasks"
+    :class="{done : task.done}"
+    @click="isDone(index)"
+    >
         <span>{{ task.text }}</span>
     </li>
 </ul>

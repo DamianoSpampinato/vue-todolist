@@ -15,5 +15,8 @@ createApp({
             this.tasks.push(newTask);
             this.userTask = '';
         },
+        isDone(index){
+            this.tasks[index].done=true
+        }
     },
 }).mount('#app')
