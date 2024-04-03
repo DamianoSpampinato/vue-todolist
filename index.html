@@ -11,7 +11,13 @@
 </head>
 <div id="app">
 <body>
-<input v-model="userTask" type="text">
+<input v-model="userTask" placeholder="scrivi la tua task" type="text">
+<button @click="addTask" >Aggiungi</button>
+<ul>
+    <li v-for="task, index in tasks">
+        <span>{{ task.text }}</span>
+    </li>
+</ul>
 </div>
     <script type="text/javascript" src="js/script.js"></script>
 </body>

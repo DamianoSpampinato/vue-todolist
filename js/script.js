@@ -3,20 +3,17 @@ createApp({
     data(){
         return{
         tasks:[],
-        
-        newTask:{
-            text:'',
-            done: false
-            },
-        userTask:'Scrivi la tua task'
+        userTask:''
         }
-        console.log(newTask)
     },
     
     methods:{
-    newTask(){
-        this.newTask.text = this.userTask.trim()
-    },
-    
+        addTask(){
+            const newTask = {};
+            newTask.text = this.userTask.trim();
+            newTask.done = false;
+            this.tasks.push(newTask);
+            this.userTask = '';
+        },
     },
 }).mount('#app')
